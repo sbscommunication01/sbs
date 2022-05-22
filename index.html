@@ -78,7 +78,14 @@
     <div class="row">
       <div class="col-md-4">
         <h4>Who We Are</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh ante facilisis bibendum.</p>
+        <p class="show-read-more">
+          Customer service outsourcing has been around for 5 years. U.S. companies typically outsource customer service or back-office functions to save money. SBS clients save 40-70% compared to the cost of U.S. companies providing these same services in-house.
+          Today, BPO outsourcing has evolved beyond just a cost savings strategy. What is BPO? SBS has redefined what it means to be a BPO contact center to include
+          Access to a team of agents providing services on superior cloud-based technology platforms that accelerate business processes
+          Offer specialized skill sets not easily available to companies due to geographic location, available talent, or the high cost of the specialized skills
+          Call center analytics reporting that provide actionable insights into customer interactions
+          Building entire teams exclusively dedicated to providing knowledge-based processes that improve the quality and efficiency of the process.
+          Growing beyond Business Process Outsourcing (BPO) to Knowledge Process Outsourcing (KPO)</p>
       </div>
       <div class="col-md-4">
         <h4>What We Do</h4>
@@ -86,7 +93,13 @@
       </div>
       <div class="col-md-4">
         <h4>Why Choose Us</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh ante facilisis bibendum.</p>
+        <p>Here are some highlights of why our 100+ clients are happy and satisfied and why you should choose us:
+
+          Cut Expenses from 40% to 70%.
+          Improve Service Levels with our Omni-Channel Customer Experience.
+          Secure and Smooth Transactions with our PCI-DSS Compliant Services.
+          Rapid Scalability of your Business – Upgrade to 24/7 Customer Service.
+          ISO 9001 Certified Contact Center Solutions to Boost your Business Progress.</p>
       </div>
     </div>
   </div>
@@ -314,7 +327,7 @@
       <div class="space"></div>
       <p><i class="fa fa-envelope-o"></i>sbscommunication0@gmail.com</p>
       <div class="space"></div>
-      <p><i class="fa fa-phone">+92 343 5999383</i></p>
+      <p><i class="fa fa-phone"> <span>+92 343 5999383</span></i></p>
     </div>
     <div class="col-md-8">
       <h4>Leave us a message</h4>
@@ -372,8 +385,32 @@
 <script type="text/javascript" src="js/jquery.prettyPhoto.js"></script> 
 <script type="text/javascript" src="js/jquery.isotope.js"></script> 
 <script type="text/javascript" src="js/jqBootstrapValidation.js"></script> 
-<script type="text/javascript" src="js/contact_me.js"></script> 
-
+<script type="text/javascript" src="js/contact_me.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+  $(document).ready(function(){
+    var maxLength = 300;
+    $(".show-read-more").each(function(){
+      var myStr = $(this).text();
+      if($.trim(myStr).length > maxLength){
+        var newStr = myStr.substring(0, maxLength);
+        var removedStr = myStr.substring(maxLength, $.trim(myStr).length);
+        $(this).empty().html(newStr);
+        $(this).append(' <a href="javascript:void(0);" class="read-more">read more...</a>');
+        $(this).append('<span class="more-text">' + removedStr + '</span>');
+      }
+    });
+    $(".read-more").click(function(){
+      $(this).siblings(".more-text").contents().unwrap();
+      $(this).remove();
+    });
+  });
+</script>
+<style>
+  .show-read-more .more-text{
+    display: none;
+  }
+</style>
 <!-- Javascripts
     ================================================== --> 
 <script type="text/javascript" src="js/main.js"></script>
